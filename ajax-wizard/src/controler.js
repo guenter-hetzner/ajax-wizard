@@ -1,14 +1,11 @@
 function recall ( obj ) {
-
 	data = obj2data ( obj );
 	data.pid = uniqueid ( );
 	ajax_wizard ( obj, data );
-
 }
 
 
 function ajax_wizard ( obj, data ) {
-
 	try {
         if ( jquery ) $ = jquery;
         } catch(e){};
@@ -62,11 +59,11 @@ function uniqueid () {
 
 
 function compare ( word, string ) {
-         if ( string.match( word ) ) return true;
+	if ( string.match( word ) ) return true;
 } 
 
 
 function str_replace ( search, replace, subject ) {
-         return subject.split( search ).join ( replace );
+	return subject.split( search ).join ( replace );
 }
 
