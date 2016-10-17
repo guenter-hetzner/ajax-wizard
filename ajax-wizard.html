@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+<meta http-equiv="content-Type" content="text/html; charset=utf-8">
+<title>Ajax Wizard</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="ajax-wizard/src/controller.js"></script>
+
+</head>
+
+<body style="padding:20px">
+
+
+
+<div class="row">
+
+
+<div class="col-xs-12">
+<div class="panel panel-default">
+<div class="panel-heading">Ajax Wizard</div>
+<div class="panel-body" style="line-height:20px">Build an Ajax Function mostly comes with a difficult workaround and sometimes it sucks a lot until it runs.
+<br>
+<br>
+<b>T</b>his circumstances inpired me to code a lightweight Ajax API. <b>T</b>he benefits of Ajax Wizard is, you can write your parameters right into your HTML element, so there is no code change on further extensions.
+<br>
+<br>
+<b>A</b>ll you need to run Ajax Wizard is <a target="_blank" href="https://jquery.com/">jQuery</a> and a running PHP environment. <b>C</b>heckout this simple Ajax Demo by clicking the demo button below.</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-sm-6">
+
+<div class="panel panel-default">
+<div class="panel-heading">Ajax Wizard - Demo</div>
+
+<div class="panel-body">
+<div id="monitor">Press the Button ...</div>
+<div style="padding:10px"></div>
+
+<button 
+	class="btn btn-primary"
+	
+		data-action="some-action"
+        data-target="monitor" 
+		data-modul="test.php"
+		
+	onclick="recall (this)">
+	Ajax Wizard Demo
+	</button>
+</div>
+
+</div>
+</div>
+
+
+
+
+
+<div class="col-sm-6">
+
+<div class="panel panel-default">
+<div class="panel-heading">Sourcecode</div>
+
+
+<div style="border:0px; white-space: pre; padding:10px">&lt;div id="<b>monitor</b>">Press the Button ... &lt;div>
+
+&lt;button 
+	data-action="<b>some-action</b>"
+	data-target="<b>monitor</b>" 
+	data-modul="<b>test.php</b>"		
+	onmousedown="<b>recall (this)</b>">
+Ajax Wizard Demo
+&lt;/button>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="panel panel-info">
+<div class="panel-heading">Setup</div>
+<div class="panel-body">
+
+To install Ajax Wizard, <a href="ajax-wizard.zip">unpack the zip file</a> in your web directory and add the following line inside the head section off your HTML document.
+<br>
+<br>
+
+<span style="color:gray">
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<br>
+&lt;script src="/ajax-wizard/src/controller.js"></script>
+</span>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="col-sm-4">
+
+<div class="panel panel-default">
+<div class="panel-heading">Files</div>
+<div class="panel-body">
+<pre class="alert-default">
+ajax-wizard
+ |
+ |- src
+ |  |
+ |  |- controler.js
+ |  |- controller.php
+ |
+ |- test.php
+ </pre>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="col-sm-8">
+<div class="panel panel-default">
+<div class="panel-heading">test.php</div>
+<div class="panel-body">
+<pre>
+&lt;?php
+
+// $url <- any parameter send by your HTML element is in here
+
+$url -> result = 'You visit ' . $url -> modul . ' width ' . $url -> action;
+
+printr ( $url ); // <- printr returns a string or array to your target element
+
+// printr ( 'ok' ); // <- returns a string width "ok"
+
+?>
+ </pre>
+</div>
+</div>
+</div>
+
+
+</div>
+
+</body>
+
+</html>
